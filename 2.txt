@@ -17,5 +17,14 @@ int main()
   file1= open("a.txt", O_RDONLY);
   n = read(file1, buffer, sizeof(buffer));
   write(fd[1], buffer, n);
+   else if(p==0)
+{
+
+    
+   }
+   else
+   {
+   printf("process not created");
+}
 }
 
