@@ -12,6 +12,10 @@ int main()
   pipe(fd);
   p=fork();
   if((p>0)) {
-  printf("parent  process-->writting data of file1 into pipe\n");
+   printf("parent  process-->writting data of file1 into pipe\n");
+  close(fd[0]);
+  file1= open("a.txt", O_RDONLY);
+  n = read(file1, buffer, sizeof(buffer));
+  write(fd[1], buffer, n);
 }
 

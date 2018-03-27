@@ -17,4 +17,9 @@ else if(p==0)
 printf(" child process\n" );
 printf(" enter the number\n" );
 scanf("%d",&n);
+if(n>0)
+{
+}
+else
+{
 }
