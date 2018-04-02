@@ -12,19 +12,27 @@ int main()
   pipe(fd);
   p=fork();
   if((p>0)) {
-   printf("parent  process-->writting data of file1 into pipe\n");
+  printf("parent  process-->writting data of file1 into pipe\n");
   close(fd[0]);
   file1= open("a.txt", O_RDONLY);
   n = read(file1, buffer, sizeof(buffer));
   write(fd[1], buffer, n);
-   else if(p==0)
-{ printf("child  process-->reading file1 data from pipe and written in the destination file\n");
+  wait(NULL);
+  }
+ else if(p==0)
+{
+
+    printf("child  process-->reading file1 data from pipe and written in the destination file\n");
+    close(fd[1]);
+    n1= read(fd[0], buffer1,sizeof(buffer1));
+    close(fd[0]);
     file2 = open("a1.txt", O_CREAT|O_RDWR, 00777);
-    
+    write(file2, buffer1,n1 );
    }
-   else
-   {
+else
+{
    printf("process not created");
+   exit(0);
 }
 }
 

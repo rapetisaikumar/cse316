@@ -9,6 +9,7 @@ int n,i;
 p=fork();
 if(p>0)
 {
+wait(NULL);
 printf(" parent process \n");
 
 }
@@ -29,6 +30,14 @@ if(n>0)
 printf("-->%d\n" ,n);
 }
 }
+}
 else
 {
+printf(" please enter the correct value\n" );
+}
+}
+else
+{
+printf("process not created\n" );
+}
 }
