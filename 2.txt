@@ -18,8 +18,8 @@ int main()
   n = read(file1, buffer, sizeof(buffer));
   write(fd[1], buffer, n);
    else if(p==0)
-{
-
+{ printf("child  process-->reading file1 data from pipe and written in the destination file\n");
+    file2 = open("a1.txt", O_CREAT|O_RDWR, 00777);
     
    }
    else
